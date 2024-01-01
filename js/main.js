@@ -1,6 +1,5 @@
 var bgMusic = new Audio("../audio/bg-music.mp3");
 bgMusic.volume = 0.1;
-bgMusic.currentTime = 77;
 bgMusic.loop = true;
 var svgYuanShen = document.getElementById("svgYuanShen");
 
@@ -14,6 +13,7 @@ function genshenAppearOrHide(switchAppearOrHide) {
       svgYuanShen.style.cssText =
         "transition: opacity 2s ease-in-out; opacity: 1;";
     }, 2200);
+    bgMusic.currentTime = 77;
     bgMusic.play();
     setTimeout(function () {
       bgMusic.volume = 0.3;
