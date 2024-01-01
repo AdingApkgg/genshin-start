@@ -1,14 +1,20 @@
+var bgMusic = new Audio("../audio/bg-music.mp3");
+bgMusic.volume = 0.3;
+bgMusic.currentTime = 77;
+bgMusic.loop = true;
 var svgYuanShen = document.getElementById("svgYuanShen");
 
 function genshenAppearOrHide(switchAppearOrHide) {
   if (switchAppearOrHide == false) {
     svgYuanShen.style.cssText =
       "transition: opacity 0s ease-in-out; opacity: 0;";
+    bgMusic.pause();
   } else if (switchAppearOrHide == true) {
     setTimeout(function () {
       svgYuanShen.style.cssText =
         "transition: opacity 2s ease-in-out; opacity: 1;";
     }, 2200);
+    bgMusic.play();
   }
 }
 
